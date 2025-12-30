@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מתנה מחכה לך | רבקה הולצברג</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-green: #1B4D3E;
+            --luxury-gold: #D4AF37;
+            --bg-cream: #F8F9FA;
+            --text-dark: #333333;
+            --white-glass: rgba(255, 255, 255, 0.96);
+            --border-light: rgba(27, 77, 62, 0.15);
+            --wa-green-light: #e7fce3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(rgba(27, 77, 62, 0.03) 1.2px, transparent 1.2px);
+            background-size: 35px 35px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .top-status {
+            text-align: center;
+            padding: 40px 0 20px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .success-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #fff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            color: var(--deep-green);
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-light);
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--deep-green);
+            font-size: clamp(1.4rem, 4.5vw, 2.1rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .book-container {
+            perspective: 1500px;
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .book-wrapper {
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(18deg) rotateX(5deg);
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .book-wrapper:hover {
+            transform: rotateY(8deg) rotateX(2deg) scale(1.02);
+        }
+
+        .book-3d {
+            width: 100%;
+            max-width: 270px;
+            aspect-ratio: 1 / 1.414;
+            object-fit: cover;
+            border-radius: 3px 6px 6px 3px;
+            display: block;
+            box-shadow: 15px 20px 45px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+        }
+
+        .book-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 15px;
+            height: 100%;
+            background: linear-gradient(to left, #dcdcdc 0%, #ffffff 50%, #e0e0e0 100%);
+            transform-origin: right;
+            transform: rotateY(-90deg);
+            z-index: 1;
+            border-radius: 2px;
+            box-shadow: inset -2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .content-card {
+            background: var(--white-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 35px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.04);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        .bridge-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .bridge-section h2 {
+            color: var(--deep-green);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .bridge-section p {
+            font-size: 1.05rem;
+            color: #555;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-box {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            background: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--luxury-gold);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+            flex-shrink: 0;
+        }
+
+        .feature-info h3 {
+            font-size: 1rem;
+            color: var(--deep-green);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .auth-recommendations {
+            margin: 45px 0;
+            text-align: center;
+        }
+
+        .auth-title {
+            color: var(--deep-green);
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 1.25rem;
+        }
+
+        .single-rec-container {
+            width: 100%;
+            max-width: 340px; 
+            margin: 0 auto;
+            aspect-ratio: 5 / 4; 
+            background: #fff;
+            border: 8px solid #fff; 
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            outline: 1px solid #eee;
+        }
+
+        .rec-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .pricing-island {
+            background: #fff;
+            border-radius: 28px;
+            padding: 40px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .price-anchor {
+            font-size: 1.1rem;
+            color: #999;
+            margin-bottom: 5px;
+        }
+
+        .price-anchor span {
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .price-final {
+            color: var(--deep-green);
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background-color: var(--luxury-gold);
+            color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 40px;
+            border-radius: 18px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            width: auto;
+            min-width: 320px;
+        }
+
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3); }
+
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            opacity: 0.8;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.7rem;
+            color: var(--deep-green);
+            gap: 4px;
+        }
+
+        .timer-display {
+            background: var(--deep-green);
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 10px;
+            font-weight: 900;
+            font-size: 2.2rem;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .svg-icon { 
+            width: 24px;
+            height: 24px;
+            fill: none; 
+            stroke: currentColor; 
+            stroke-width: 2.2; 
+            stroke-linecap: round; 
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            display: block;
+            overflow: visible;
+        }
+
+        @media (max-width: 600px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .price-final { font-size: 3.5rem; }
+            .cta-btn { width: 100%; min-width: unset; font-size: 1.15rem; }
+            .content-card { padding: 30px 20px; }
+            .single-rec-container { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="top-status">
+            <div class="success-badge">
+                <div style="width: 24px; height: 24px;">
+                    <svg class="svg-icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                מעולה! חוברת הלחמים בדרך למייל שלך
+            </div>
+            
+            <div class="offer-row" style="margin-bottom: 15px;">
+                <div class="offer-highlight-badge" style="background-color: var(--deep-green); color: var(--luxury-gold); display: inline-block; padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; box-shadow: 0 8px 20px rgba(27, 77, 62, 0.1);">הטבת הצטרפות מיוחדת למצטרפות חדשות</div>
+            </div>
+
+            <h1>הלחמים בדרך למייל! ובינתיים... הזדמנות לשדרג את המטבח</h1>
+        </header>
+
+        <div class="book-container">
+            <div class="book-wrapper">
+                <img src="image.png" alt="ספר המתכונים המלא - רבקה הולצברג" class="book-3d">
+            </div>
+        </div>
+
+        <main class="content-card">
+            <section class="bridge-section">
+                <h2>בינינו? הכי כיף לבשל מספר אמיתי.</h2>
+                <p>החוברת הדיגיטלית מעולה, אבל אין כמו הנוחות של ספר שפתוח על השיש. בלי מסך שנכבה באמצע ובלי להסתבך – פשוט לפתוח ולבשל בנחת.</p>
+            </section>
+            
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <div class="feature-info">
+                        <h3>מתוקים בלי חרטות</h3>
+                        <p>עוגות, עוגיות וקינוחי בריאות נימוחים שפשוט אי אפשר להפסיק לנשנש (בלי טיפה של ייסורי מצפון).</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    </div>
+                    <div class="feature-info">
+                        <h3>פתרון לכל השנה</h3>
+                        <p>פשטידות, מנות עיקריות ומתכוני חגים מרשימים שכולם אוהבים.</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                    <div class="feature-info">
+                        <h3>ליווי אישי צמוד</h3>
+                        <p>קישור לסרטון וידאו בכל מתכון להצלחה בטוחה במטבח.</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="feature-info">
+                        <h3>מבחן הטעם</h3>
+                        <p>מתכונים שכל המשפחה והנכדים אוהבים (בדוק!).</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="auth-recommendations">
+                <p class="auth-title">מה אומרות נשים שכבר מבשלות מהספר?</p>
+                <div class="single-rec-container">
+                    <img src="hamlza4.png" alt="המלצה מהספר" class="rec-image">
+                </div>
+            </section>
+
+            <div class="pricing-island">
+                <p id="offer-status-text" style="font-weight: 700; color: var(--deep-green); margin-bottom: 10px;">הטבה בלעדית למצטרפות חדשות (ל-15 דקות):</p>
+                
+                <div class="price-anchor" id="anchor-row">
+                    במקום <span>129₪</span>
+                </div>
+
+                <div class="price-final">
+                    <span style="font-size: 1.5rem; font-weight: 700;">רק</span>
+                    <span id="price-val">89</span>
+                    <span style="font-size: 2rem; vertical-align: super; font-weight: 700;">₪</span>
+                </div>
+
+                <a href="https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-clearing?ProductGuid=78547b55-6474-4095-a177-9cb605ce3fc1" id="main-cta" class="cta-btn">
+                    כן, אשמח למשלוח של הספר הביתה >>
+                </a>
+
+                <div class="trust-row">
+                    <div class="trust-badge">
+                        <div style="width: 24px; height: 24px;"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
+                        סליקה מאובטחת
+                    </div>
+                    <div class="trust-badge">
+                        <div style="width: 24px; height: 24px;"><svg class="svg-icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></div>
+                        משלוח מהיר
+                    </div>
+                    <div class="trust-badge">
+                        <div style="width: 24px; height: 24px;"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                        אחריות איכות
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <p style="color: var(--deep-green); font-weight: 700; font-size: 1rem;">המחיר יעלה בעוד:</p>
+                    <div id="timer-val" class="timer-display">15:00</div>
+                </div>
+            </div>
+        </main>
+
+        <footer style="text-align: center; padding: 30px 0; color: #aaa; font-size: 0.8rem;">
+            <p>© רבקה הולצברג - בריאות שבאה מהטבע</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const DISCOUNT_LINK = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-clearing?ProductGuid=78547b55-6474-4095-a177-9cb605ce3fc1"; 
+        const REGULAR_LINK = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-clearing?ProductGuid=01f99036-3332-4744-a2bc-1a6f96893572";  
+        const TIMER_DURATION = 15 * 60;
+
+        function initOTO() {
+            const timerDisplay = document.getElementById('timer-val');
+            const ctaBtn = document.getElementById('main-cta');
+            const priceVal = document.getElementById('price-val');
+            const offerText = document.getElementById('offer-status-text');
+            const anchorRow = document.getElementById('anchor-row');
+            
+            let endTime = localStorage.getItem('oto_end_time_bread');
+            const now = Math.floor(Date.now() / 1000);
+
+            if (!endTime) {
+                endTime = now + TIMER_DURATION;
+                localStorage.setItem('oto_end_time_bread', endTime);
+            }
+
+            function updateTimer() {
+                const currentTime = Math.floor(Date.now() / 1000);
+                const remaining = endTime - currentTime;
+
+                if (remaining <= 0) {
+                    timerDisplay.textContent = "00:00";
+                    ctaBtn.href = REGULAR_LINK; 
+                    priceVal.textContent = "99";
+                    if(anchorRow) anchorRow.style.display = "none";
+                    offerText.textContent = "ההטבה הסתיימה, אך עדיין ניתן לרכוש במחיר מבצע:";
+                    timerDisplay.style.background = "#888";
+                    clearInterval(timerInterval);
+                    return;
+                }
+
+                const mins = Math.floor(remaining / 60);
+                const secs = remaining % 60;
+                timerDisplay.textContent = `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+                ctaBtn.href = DISCOUNT_LINK;
+            }
+
+            const timerInterval = setInterval(updateTimer, 1000);
+            updateTimer();
+        }
+
+        window.onload = initOTO;
+    </script>
+</body>
+</html>
