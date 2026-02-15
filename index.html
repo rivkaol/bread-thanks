@@ -44,6 +44,7 @@
             padding: 20px; 
         }
 
+        /* Status label at the top */
         .top-status { text-align: center; padding: 20px 0 30px; animation: fadeIn 1s ease; }
 
         .success-label {
@@ -61,6 +62,7 @@
             max-width: 100%;
         }
 
+        /* Offer card at the top */
         .early-upgrade-box {
             background: #fff;
             border: 3px solid var(--luxury-gold);
@@ -101,10 +103,12 @@
             border: none;
         }
 
+        /* Typography */
         h1 { font-size: clamp(2rem, 7vw, 3.2rem); font-weight: 900; text-align: center; line-height: 1.25; margin-bottom: 20px; text-wrap: balance; }
 
         .bridge-text { text-align: center; font-size: 1.35rem; margin-bottom: 50px; max-width: 90%; margin-left: auto; margin-right: auto; line-height: 1.7; text-wrap: balance; }
 
+        /* Animated thin gold underline */
         .gold-line { position: relative; display: inline-block; font-weight: 700; }
         .gold-line::after {
             content: "";
@@ -119,11 +123,14 @@
         }
         .gold-line.active::after { width: 100%; }
 
+        /* Book Image Container */
         .book-container { perspective: 2500px; margin: 50px 0; display: flex; justify-content: center; }
         .book-img { width: 320px; height: auto; border-radius: 5px 15px 15px 5px; box-shadow: 25px 35px 60px rgba(0,0,0,0.18); transform: rotateY(15deg); }
 
+        /* Content Card */
         .glass-card { background: var(--white-glass); border-radius: 40px; padding: 60px 35px; box-shadow: var(--shadow-premium); border: 1px solid #fff; margin-top: -20px; position: relative; z-index: 10; }
 
+        /* Features Layout */
         .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; }
         .feature-box { display: flex; flex-direction: column; gap: 15px; }
         .feature-icon-box { width: 60px; height: 60px; background: #FDF9F0; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--luxury-gold); border: 1px solid rgba(212, 175, 55, 0.2); }
@@ -131,11 +138,13 @@
         .feature-info h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 10px; line-height: 1.3; }
         .feature-info p { font-size: 1.15rem; line-height: 1.6; opacity: 1; }
 
+        /* Testimonial Section */
         .testimonial-section { text-align: center; margin: 60px 0 20px; padding: 0 10px; }
         .testimonial-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 25px; color: var(--deep-green); text-wrap: balance; }
         .testimonial-card { background: #fff; padding: 12px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); max-width: 480px; margin: 0 auto; border: 1px solid var(--border-light); transform: rotate(-1deg); }
         .testimonial-img { width: 100%; height: auto; border-radius: 10px; display: block; }
 
+        /* Pricing Section */
         .pricing-box { background: #fff; border-radius: 40px; padding: 50px 30px; text-align: center; border: 3px solid var(--border-light); margin-top: 40px; }
         .price-badge { background: #FDF9EC; color: var(--luxury-gold); padding: 12px 30px; border-radius: 50px; font-size: 1.2rem; font-weight: 800; margin-bottom: 25px; display: inline-block; border: 1px solid rgba(212, 175, 55, 0.3); }
         .price-display { font-size: 6.5rem; font-weight: 900; line-height: 1; margin-bottom: 40px; display: flex; justify-content: center; align-items: flex-start; }
@@ -143,9 +152,11 @@
 
         .cta-btn { background: var(--gold-gradient); color: #fff !important; text-decoration: none; padding: 25px 40px; border-radius: 22px; font-size: 1.7rem; font-weight: 900; display: block; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4); width: 100%; line-height: 1.4; text-wrap: balance; }
 
+        /* Trust elements */
         .trust-section { margin-top: 35px; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
         .trust-item { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 600; }
 
+        /* Timer in pricing */
         .timer-container { margin-top: 45px; padding-top: 35px; border-top: 2px dashed var(--border-light); }
         #big-timer { font-size: 2.8rem; font-weight: 900; font-variant-numeric: tabular-nums; letter-spacing: 4px; margin-top: 10px; }
 
@@ -174,6 +185,7 @@
         </div>
     </header>
 
+    <!-- Top upgrade offer -->
     <section class="early-upgrade-box">
         <h3>רוצה ליצור שינוי אמיתי בכל ארוחה ביום?</h3>
         <p>כדי שתוכלי להתחיל כבר מהשבוע הקרוב, שמרתי לך את מחיר ההשקה המיוחד לזמן הקרוב:</p>
@@ -185,15 +197,18 @@
         <a href="#pricing" class="quick-cta">כן רבקה, אני רוצה את ארגז הכלים המלא למטבח שלי >></a>
     </section>
 
+    <!-- Headline and bridge -->
     <h1>לחמים ומאפים הם התחלה נפלאה, אבל מה עם שאר היום?</h1>
     <p class="bridge-text">
         חוברת הלחמים תסגור לך את הפינה לארוחת הבוקר או לכריך... אבל כדי להרגיש <span class="gold-line">שינוי אמיתי</span> באנרגיה שלך ולדעת שתמיד יש לך פתרון בריא וטעים לכל המשפחה, את צריכה את <span class="gold-line">ארגז הכלים המלא</span>. הכל מחכה לך בספר אחד, מוחשי וברור.
     </p>
 
+    <!-- Showcase image -->
     <div class="book-container">
         <img src="image.png" alt="ספר המתכונים המלא - רבקה הולצברג" class="book-img">
     </div>
 
+    <!-- Main features grid -->
     <main class="glass-card">
         <h2 style="text-align: center; color: var(--deep-green); margin-bottom: 50px; font-size: 2.1rem; font-weight: 900; text-wrap: balance;">נבחרת היתרונות של המטבח הבריא:</h2>
         
@@ -236,6 +251,7 @@
             </div>
         </div>
 
+        <!-- Social Proof Section -->
         <section class="testimonial-section">
             <h3 class="testimonial-title">זה מה שקורה במטבח של המצטרפות שלנו...</h3>
             <div class="testimonial-card">
@@ -243,6 +259,7 @@
             </div>
         </section>
 
+        <!-- Final pricing and call to action -->
         <div class="pricing-box" id="pricing">
             <span class="price-badge" id="offer-status">הטבת הצטרפות מיוחדת:</span>
             <div class="price-display">
@@ -256,10 +273,6 @@
                 <div class="trust-item">
                     <svg width="22" height="22" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
                     סליקה מאובטחת
-                </div>
-                <div class="trust-item">
-                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 20 20"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7h-3v7h3.05a2.5 2.5 0 014.9 0H19a1 1 0 001-1V7a1 1 0 00-1-1h-5z"></path></svg>
-                    משלוח מהיר הביתה
                 </div>
             </div>
 
@@ -276,10 +289,12 @@
 </div>
 
 <script>
+    // Clearing links provided by the user
     const DISCOUNT_LINK = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-clearing?ProductGuid=78547b55-6474-4095-a177-9cb605ce3fc1"; 
     const REGULAR_LINK = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-clearing?ProductGuid=01f99036-3332-4744-a2bc-1a6f96893572";  
     const DURATION_SECONDS = 15 * 60;
 
+    // Timer functionality
     function initCountdown() {
         const miniDisplay = document.getElementById('timer-val-mini');
         const bigDisplay = document.getElementById('big-timer');
@@ -304,7 +319,7 @@
                 miniDisplay.textContent = expiredStr;
                 bigDisplay.textContent = expiredStr;
                 priceElement.textContent = "99";
-                statusText.textContent = "ההטבה הסתיומה, אך ניתן להזמין במחיר השקה:";
+                statusText.textContent = "ההטבה הסתיימה, אך ניתן להזמין במחיר השקה:";
                 bigDisplay.style.color = "#999";
                 
                 actionLinks.forEach(link => { link.href = REGULAR_LINK; });
@@ -323,6 +338,7 @@
         }, 1000);
     }
 
+    // Scroll reveal animation for gold lines
     function initAnimations() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -333,8 +349,10 @@
         document.querySelectorAll('.gold-line').forEach(line => { observer.observe(line); });
     }
 
+    // Smooth scroll and internal navigation handling
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
+            // Only prevent default if it's strictly a scroll anchor
             if (this.classList.contains('main-link-element') && this.getAttribute('href') !== '#pricing') return;
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
