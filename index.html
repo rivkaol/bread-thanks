@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>תודה רבה! | רבקה הולצברג</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,16 @@
             --page-bg: #ffffff;
             --book-height: 340px;
             --page-width: 240px;
+        }
+
+        /* נעילת רוחב למניעת תזוזה לצדדים (Horizontal Overflow Fix) */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,6 +58,7 @@
             max-width: 600px;
             text-align: center;
             animation: fadeIn 0.8s ease-out;
+            overflow-x: hidden;
         }
 
         .success-banner {
@@ -72,6 +83,7 @@
             box-shadow: 0 15px 35px rgba(27, 77, 62, 0.05);
             margin-bottom: 30px;
             border: 1px solid rgba(212, 175, 55, 0.15);
+            width: 100%;
         }
 
         h2 {
@@ -102,10 +114,11 @@
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
             margin-bottom: 20px;
             width: 100%;
+            max-width: 100%;
         }
         
         .btn-text {
-            white-space: nowrap; /* מונע ירידת שורה של החצים */
+            white-space: nowrap; 
         }
 
         .whatsapp-btn:hover {
@@ -124,6 +137,7 @@
         .benefits-list {
             text-align: right;
             margin: 25px 0;
+            width: 100%;
         }
         .benefit-item {
             display: flex;
@@ -158,6 +172,7 @@
             width: 100%;
             perspective: 2500px;
             margin: 30px 0;
+            overflow: hidden; 
         }
 
         .book-viewport {
@@ -229,7 +244,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            background-color: #f9f9f9; /* Fallback */
+            background-color: #f9f9f9;
         }
 
         .navigation-buttons {
@@ -267,10 +282,9 @@
         .dot { width: 8px; height: 8px; border-radius: 50%; background: #ddd; transition: 0.3s; cursor: pointer; }
         .dot.active { background: var(--accent-gold); transform: scale(1.3); }
 
-        /* --- סוף רכיב הספר --- */
-
         .price-tag {
             margin: 20px 0 15px 0;
+            width: 100%;
         }
         .new-price {
             color: var(--primary-green);
@@ -299,6 +313,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
             width: 100%;
+            max-width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.3);
             line-height: 1.2;
         }
@@ -349,11 +364,12 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 550px) {
-            :root { --page-width: 160px; --book-height: 230px; }
+            :root { --page-width: 155px; --book-height: 220px; }
             .book-viewport { height: 260px; }
             h2 { font-size: 1.4rem; }
-            .cta-btn { font-size: 1.2rem; }
+            .cta-btn { font-size: 1.25rem; }
             .new-price { font-size: 2.1rem; }
+            .glass-card { padding: 35px 20px; }
         }
     </style>
 </head>
@@ -414,31 +430,30 @@
                     <div class="book-wrapper" id="bookWrapper">
                         <div class="book-spine"></div>
                         
-                        <!-- דפים (תמונות לדוגמה - יש להחליף בנתיבים האמיתיים) -->
                         <div class="page" id="p4" style="z-index: 1;">
                             <div class="page-content">
-                                <img src="4.jpg" class="full-page-img" alt="דף ספר 4">
+                                <img src="4.jpg" class="full-page-img" alt="דף 4">
                             </div>
                             <div class="page-content page-back"></div>
                         </div>
 
                         <div class="page" id="p3" style="z-index: 2;">
                             <div class="page-content">
-                                <img src="3.jpg" class="full-page-img" alt="דף ספר 3">
+                                <img src="3.jpg" class="full-page-img" alt="דף 3">
                             </div>
                             <div class="page-content page-back"></div>
                         </div>
 
                         <div class="page" id="p2" style="z-index: 3;">
                             <div class="page-content">
-                                <img src="2.jpg" class="full-page-img" alt="דף ספר 2">
+                                <img src="2.jpg" class="full-page-img" alt="דף 2">
                             </div>
                             <div class="page-content page-back"></div>
                         </div>
 
                         <div class="page" id="p1" style="z-index: 4;">
                             <div class="page-content">
-                                <img src="1.jpg" class="full-page-img" alt="כריכת הספר">
+                                <img src="1.jpg" class="full-page-img" alt="כריכה">
                             </div>
                             <div class="page-content page-back"></div>
                         </div>
@@ -486,7 +501,6 @@
     </div>
 
     <script>
-        // לוגיקת טיימר ומחיר
         const discountLink = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-clearing?ProductGuid=78547b55-6474-4095-a177-9cb605ce3fc1";
         const fullPriceLink = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-clearing?ProductGuid=01f99036-3332-4744-a2bc-1a6f96893572";
 
@@ -511,7 +525,6 @@
             }, 1000);
         }
 
-        // לוגיקת ספר תלת-ממדי
         const pages = [
             document.getElementById('p1'),
             document.getElementById('p2'),
@@ -527,7 +540,6 @@
         let currentIdx = 0;
         const totalStates = pages.length + 1;
 
-        // יצירת נקודות ניווט
         for (let i = 0; i < totalStates; i++) {
             const dot = document.createElement('div');
             dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -537,7 +549,7 @@
         const dots = document.querySelectorAll('.dot');
 
         function updateBookUI() {
-            let pageWidth = window.innerWidth <= 550 ? 160 : 240;
+            let pageWidth = window.innerWidth <= 550 ? 155 : 240;
             dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIdx));
             
             if (currentIdx === 0) {
